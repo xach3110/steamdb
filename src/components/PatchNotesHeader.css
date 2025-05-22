@@ -1,0 +1,52 @@
+.patch-header {
+  margin-top: 50px;
+  padding: 24px;
+  color: #eee;
+  box-sizing: border-box;
+}
+
+.patch-header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patch-header__title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.patch-header__btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  background: #0064e0;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.patch-header__btn:hover {
+  background: #0051a8;
+}
+
+.patch-header__subtitle {
+  margin: 8px 0 0;
+  font-size: 24px;
+  color: #bbb;
+}
+
+.patch-header__desc-box {
+  margin-top: 16px;
+  padding: 16px;
+  border: 0.5px solid #4084d6;
+  border-radius: 8px;
+}
+
+.patch-header__desc {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ccc;
+}
