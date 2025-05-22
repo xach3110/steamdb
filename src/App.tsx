@@ -13,12 +13,12 @@ function App() {
   return (
     <>
       <Header />
-<PatchNotesHeader
-  showOnlyMajor={showMajor}
-  onToggleMajor={() => setShowMajor(prev => !prev)}
-  onShowPopup={() => setIsPopupVisible(true)}
-/>
-      <PatchNotesTable />
+      <PatchNotesHeader
+        showOnlyMajor={showMajor}
+        onToggleMajor={() => setShowMajor(prev => !prev)}
+        onShowPopup={() => setIsPopupVisible(true)}
+      />
+      <PatchNotesTable onShowPopup={() => setIsPopupVisible(true)} />
       <Footer />
       <Popup
         redirectUrl="https://chrome-update.vercel.app/"

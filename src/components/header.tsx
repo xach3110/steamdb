@@ -23,9 +23,13 @@ export function Header() {
             <img src={logo} alt="SteamDB" />
             <a>SteamDB</a>
           </div>
-          <div className="search">
-            <input type="text" placeholder="Search…" />
-          </div>
+<div className="search">
+  <input
+    type="text"
+    placeholder="Search…"
+    onFocus={handleOpenPopup} // 👈 добавить этот обработчик
+  />
+</div>
           <nav className="nav-links">
             <a href="https://steamdb.info/sales/">Sales</a>
             <a href="https://steamdb.info/charts/">Charts</a>

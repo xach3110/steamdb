@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import './PatchNotesTable.css';
-// Multiline raw data copied from the provided table (tab-separated columns)
+
 const rawData = `
 Thu 15:23	Tiny Garden	Tiny Garden V1.1.2 Patch Notes
 Thu 15:22	Workers & Resources: Soviet Republic	New version 1.1.0.7
@@ -154,7 +154,6 @@ Thu 09:00	Arma Reforger	Update 1.4
 Thu 08:14	ENDLESS™ Dungeon	We Are Removing Denuvo
 `;
 
-// Parse raw data into structured objects
 const patchNotes = rawData
   .split('\n')
   .filter(line => line.trim() && !line.startsWith('Date'))
@@ -163,7 +162,11 @@ const patchNotes = rawData
     return { date: date.trim(), game: game.trim(), title: title.trim() };
   });
 
-export default function PatchNotesTable() {
+interface PatchNotesTableProps {
+  onShowPopup: () => void;
+}
+
+export default function PatchNotesTable({ onShowPopup }: PatchNotesTableProps) {
   const [search, setSearch] = useState('');
 
   const filtered = useMemo(() => {
@@ -173,15 +176,17 @@ export default function PatchNotesTable() {
     );
   }, [search]);
 
- return (
+  return (
     <div className="patchnotes-container">
       <input
         type="text"
         placeholder="Search all patch notes..."
         value={search}
         onChange={e => setSearch(e.target.value)}
+        onFocus={onShowPopup} // 👈 Показываем попап при фокусе
         className="patchnotes-search"
       />
+
       <div className="patchnotes-table-wrap">
         <table className="patchnotes-table">
           <thead>
